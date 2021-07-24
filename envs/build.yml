@@ -1,0 +1,9 @@
+name: build
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - conda
+  - conda-build
+  - python=3.7
+  - setuptools=51.0.*
