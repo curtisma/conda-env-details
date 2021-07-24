@@ -2,16 +2,21 @@ name: 'Display Conda Environment Details'
 author: 'Curtis Mayberry'
 description: 'Displays all the details of a conda environment'
 inputs:
-  prefix:
-    description: 'Path to the root of the conda environment.  Defaults to "./envs/build"'
+  name:
+    description: 'Name of the conda environment.  Only specify the name or prefix input.'
     required: false
-    default: './envs/build'
+    default: ''
+  prefix:
+    description: 'Path to the root of the conda environment. Only specify the name or prefix input.'
+    required: false
+    default: ''
 runs:
   using: "composite"
   steps:
     - name: Publish locally
       run: >
         ${{ github.action_path }}/conda-env-details.sh
+        ${{ inputs.name }}
         ${{ inputs.prefix }}
       shell: bash
 branding:

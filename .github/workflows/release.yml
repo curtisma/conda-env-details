@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run_test_name:
+  test_name:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -18,3 +18,4 @@ jobs:
       - uses: ./
         with:
           name: build
+  test_prefix

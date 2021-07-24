@@ -1,10 +1,29 @@
+
+if [[ $1 ]] && [[ $2 ]]; then
+  echo "ERROR: Please only specify either the name or prefix."
+  exit 0
+fi
+
 echo "INPUTS"
 echo "------"
-printf ' Environment prefix:\n  %s\n' "$1"
+if [[ $1 ]]; then
+  printf ' Environment prefix:\n  %s\n' "$1"
+fi
+if [[ $2 ]]; then
+  printf ' Environment prefix:\n  %s\n' "$1"
+fi
+
 echo ""
 echo "Initializing conda"
-source "$1/etc/profile.d/conda.sh"  # setup conda
-conda activate $1
+if { ! [[ $CONDA ]]; } && [[ $2 ]]; then
+  source "$1/etc/profile.d/conda.sh"  # setup conda
+fi
+if ! [[ $1 ]]; then
+  conda activate $1
+else
+  conda activate $2
+fi
+
 echo ""
 conda info -a -v
 echo ""
