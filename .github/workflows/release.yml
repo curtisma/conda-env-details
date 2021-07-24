@@ -22,7 +22,7 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           activate-environment: build
-          environment-file: envs/build.yml
+          environment-file: ${{ env.ENV_YAML }}
       - uses: ./
         with:
           name: build
