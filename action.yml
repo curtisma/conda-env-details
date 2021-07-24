@@ -14,7 +14,10 @@ runs:
   using: "composite"
   steps:
     - name: Publish locally
-      run: ${{ github.action_path }}/conda-env-details.sh ${{ inputs.name }} ${{ inputs.prefix }}
+      run: >
+        ${{ github.action_path }}/conda-env-details.sh
+        ${{ inputs.name }}
+        ${{ inputs.prefix }}
       shell: bash
 branding:
   icon: 'package'
