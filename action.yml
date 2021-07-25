@@ -18,7 +18,7 @@ runs:
         ${{ github.action_path }}/conda-env-details.sh
         ${{ inputs.name }}
         ${{ inputs.prefix }}
-      shell: bash
+      shell: bash -l {0}
 branding:
   icon: 'package'
   color: 'green'
