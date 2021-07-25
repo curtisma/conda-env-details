@@ -7,10 +7,10 @@ fi
 echo "INPUTS"
 echo "------"
 if [[ $1 ]]; then
-  printf ' Environment prefix:\n  %s\n' "$1"
+  printf ' Environment name:\n  %s\n' "$1"
 fi
 if [[ $2 ]]; then
-  printf ' Environment prefix:\n  %s\n' "$1"
+  printf ' Environment prefix:\n  %s\n' "$2"
 fi
 
 echo ""
