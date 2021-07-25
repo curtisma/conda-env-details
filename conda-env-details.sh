@@ -14,8 +14,8 @@ if [[ $2 ]]; then
 fi
 
 echo ""
-echo "Initializing conda"
 if { ! [[ $CONDA ]]; } && [[ $2 ]]; then
+  echo "Initializing conda"
   source "$1/etc/profile.d/conda.sh"  # setup conda
 fi
 echo "Activating conda"
